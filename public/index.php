@@ -7,4 +7,4 @@ require_once LIBS . '/functions.php';
 new \shop\App();
 \shop\App::$app->setProperty('test', 'TEST');
 
-debug(\shop\App::$app->getProperties());
+throw new Exception('Страница не найдена', 500);
