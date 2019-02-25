@@ -25,9 +25,10 @@ class ErrorHandler
         $this->displayError('Исключение', $e->getMessage(), $e->getFile(), $e->getLine(), $e->getCode());
     }
 
+//You want to give write permissions to the folder
+//Нужно дать права на запись в папку.
     protected function logErrors($massage = '', $file = '', $line = '') {
-        error_log("[" . date('Y-m-d H:i:s') . "] Text error: {$massage} | File: {$file} | String or line: 
-        {$line} \n--------------------\n", 3, ROOT . '/tmp/errors.log');
+        error_log("[" . date('Y-m-d H:i:s') . "] Текст ошибки: {$massage} | Файл: {$file} | Строка: {$line} \n--------------------\n", 3, ROOT . '/tmp/errors.log');
     }
 
     protected function displayError($errno, $errstr, $errfile, $errline, $responce = 404) {
