@@ -16,6 +16,7 @@ class App {
     public function __construct()
     {
         $query = trim($_SERVER['REQUEST_URI'], '/');
+        var_dump($query);
         session_start();
         self::$app = Registry::instance();
         $this->getParams();

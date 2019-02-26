@@ -15,7 +15,7 @@ class Router {
     protected static $route = [];
 
     public static function add($regexp, $route = []) {
-        self::$routes[$regexp] = $route;
+        self::$routes[] = ['regexp' => $regexp, 'options' => $route];
     }
 
     public  static function getRoutes() {
@@ -32,22 +32,27 @@ class Router {
         }else{
             echo 'NO';
         }
+
     }
 
     public static function matchRoute($url) {
 
-        foreach (self::$routes as $pattern => $route) {
-            $matches = [];
-            if (preg_match("#{$pattern}#", $url, $matches)) {
+        foreach (self::$routes as $route) {
+
+            if(preg_match("{$route['regexp']}", $url, $matches)) {
+
                 foreach ($matches as $k => $v) {
                     if(is_string($k)){
-                        $route[$k] = $v;
+                        $route['options'][$k] = $v;
                     }
                 }
 
-                if(empty($route['action'])) {
-                    $route['action'] = 'index';
+
+                if(empty($route['options']['action'])) {
+                    $route['options']['action'] = 'index';
                 }
+
+                debug( $route );
 
                 return true;
             }

@@ -4,7 +4,5 @@
  */
 
 function debug ($arr) {
-    echo "<pre> \n";
-    var_dump($arr);
-    echo "<pre>";
+    echo '<pre>' . print_r($arr, true) . '</pre>';
 }
