@@ -47,7 +47,6 @@ class Router {
                     }
                 }
 
-
                 if(empty($route['options']['action'])) {
                     $route['options']['action'] = 'index';
                 }
