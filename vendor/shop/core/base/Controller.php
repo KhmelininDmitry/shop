@@ -3,7 +3,7 @@
 namespace shop\base;
 
 
-abstract class Controller{
+abstract class Controller {
 
     public $route;
     public $controller;
