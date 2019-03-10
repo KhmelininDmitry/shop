@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: lucky
- * Date: 25.02.19
- * Time: 13:12
- */
 
 namespace shop;
 
