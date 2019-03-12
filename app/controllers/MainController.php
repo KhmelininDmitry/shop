@@ -9,6 +9,8 @@ class MainController extends AppController {
 //    public $layout = 'nameLayouts'; //Так можно смненить шаблон
 
     public function indexAction(){
+        $posts = \R::findAll('test');
+        $post = \R::findOne('test', 'id = ?', [2]);
 //        $this->layout = 'nameLayouts' // Или так
 //        echo __METHOD__;
         $this->setMeta('Главная страница', 'Описание...', 'Ключевики...');
@@ -17,6 +19,6 @@ class MainController extends AppController {
         $age = 30;
         $names = ['Andrey', 'Jane', 'Lol'];
 //        $this->set(['name' => 'Andrey', 'age' => 30]);
-        $this->set(compact('name', 'age', 'names'));
+        $this->set(compact('name', 'age', 'names', 'posts'));
     }
 }

@@ -1,1 +1,45 @@
-[]
+[
+    {
+        "name": "gabordemooij/redbean",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/gabordemooij/redbean.git",
+            "reference": "681732f0c9fdac08aaf59055db62e9d534e694d3"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/gabordemooij/redbean/zipball/681732f0c9fdac08aaf59055db62e9d534e694d3",
+            "reference": "681732f0c9fdac08aaf59055db62e9d534e694d3",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.4"
+        },
+        "time": "2019-03-10T16:33:29+00:00",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "RedBeanPHP\\": "RedBeanPHP"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Gabor de Mooij",
+                "email": "gabor@redbeanphp.com",
+                "homepage": "https://redbeanphp.com"
+            }
+        ],
+        "description": "RedBeanPHP ORM",
+        "homepage": "https://redbeanphp.com/",
+        "keywords": [
+            "orm"
+        ]
+    }
+]
