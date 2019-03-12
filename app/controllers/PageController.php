@@ -3,7 +3,9 @@
 namespace app\controllers;
 
 
-class PageController{
+//use shop\App;
+
+class PageController extends AppController {
 
     public function viewAction(){
         echo __METHOD__;
