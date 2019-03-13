@@ -4,6 +4,8 @@ namespace app\controllers;
 
 //use shop\App;
 
+use shop\Cache;
+
 class MainController extends AppController {
 
 //    public $layout = 'nameLayouts'; //Так можно смненить шаблон
@@ -17,7 +19,18 @@ class MainController extends AppController {
 //        $this->setMeta(App::$app->getProperty('shop_name'), 'Описание...', 'Ключевики...');
         $name = 'John';
         $age = 30;
-        $names = ['Andrey', 'Jane', 'Lol'];
+        $names = ['Andrey', 'Jane', 'Lol', 'mike'];
+
+//       Пример как записать кэш прочитать и удалить
+        $cache = Cache::instance();
+//        $cache->set('test', $names);
+//        $cache->delete('test');
+        $data = $cache->get('test');
+        if(!$data) {
+            $cache->set('test' , $names);
+        }
+        debug($data);
+
 //        $this->set(['name' => 'Andrey', 'age' => 30]);
         $this->set(compact('name', 'age', 'names', 'posts'));
     }
