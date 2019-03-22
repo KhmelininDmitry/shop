@@ -53,10 +53,10 @@
                     <div class="product-main simpleCart_shelfItem">
                         <a href="product/<?= $hit->alias; ?>" class="mask"><img class="img-responsive zoom-img" src="images/<?= $hit->img; ?>" alt="" /></a>
                         <div class="product-bottom">
-                            <h3><a href="product/<?= $hit->alias; ?>"></a><?= $hit->title; ?></h3>
+                            <h3><a href="product/<?= $hit->alias; ?>"><?= $hit->title; ?></a></h3>
                             <p>Explore Now</p>
                             <h4>
-                                <a class="add-to-cart-link" href="cart/add?id<?= $hit->id; ?>"><i></i></a> <span class=" item_price">$ <?= $hit->price;?></span>
+                                <a class="add-to-cart-link" href="cart/add?id<?= $hit->id; ?>"><i></i> <span class=" item_price">$ <?= $hit->price;?></span></a>
                                 <?php if($hit->old_price): ?>
                                     <small><del><?= $hit->old_price ?>></del></small>
                                 <?php endif; ?>
