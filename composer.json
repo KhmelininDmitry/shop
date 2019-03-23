@@ -1,11 +1,17 @@
 {
+  "repositories": [
+    {
+      "type": "git",
+      "url": "https://github.com/KhmelininDmitry/shop-core-module.git"
+    }
+  ],
   "autoload": {
     "psr-4": {
-      "shop\\": "vendor/shop/core",
       "app\\": "app"
     }
   },
   "require": {
-    "gabordemooij/redbean": "dev-master"
+    "gabordemooij/redbean": "^5.2",
+    "shop/core": "dev-master"
   }
 }
