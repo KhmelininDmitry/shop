@@ -12,6 +12,6 @@
   },
   "require": {
     "gabordemooij/redbean": "^5.2",
-    "shop/core": "dev-master"
+    "shop/core": "^1.0.0"
   }
 }

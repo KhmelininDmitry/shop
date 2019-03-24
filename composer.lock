@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "5e633639fd3b15947ac1b932cea50264",
+    "content-hash": "44074051d9fe0a4035c8719fb8274e0f",
     "packages": [
         {
             "name": "gabordemooij/redbean",
@@ -49,11 +49,11 @@
         },
         {
             "name": "shop/core",
-            "version": "dev-master",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/KhmelininDmitry/shop-core-module.git",
-                "reference": "2d8dbffe81d63658c5fe071cf0f77185ca5b47f0"
+                "reference": "9309f0ff19308f3cbc7cb85ed1b41bd340f14190"
             },
             "require": {
                 "php": ">=7.0.0"
@@ -70,15 +70,13 @@
                     "email": "khmelinindmitry@gmail.com"
                 }
             ],
-            "time": "2019-03-23T11:17:35+00:00"
+            "time": "2019-03-23T11:49:22+00:00"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "shop/core": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
