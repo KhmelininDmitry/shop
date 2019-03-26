@@ -2,6 +2,8 @@
 
 use shop\Router;
 
+Router::add('^product/(?P<alias>[a-z0-9-]+)/?$', ['controller' => 'Product', 'action' => 'view']);
+
 // default routes
 //Более конкретные правила должны распологаться выше. Все пользовательские правила пишут выше.
 
