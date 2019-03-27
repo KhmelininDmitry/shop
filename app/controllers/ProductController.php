@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 
+use app\models\Breadcrumbs;
 use app\models\Product;
 use shop\App;
 
@@ -15,6 +16,7 @@ class ProductController extends AppController{
             throw new \Exception('Страница не найдена', 404);
         }
         // Хлебные крошки
+        $breadcrumbs = Breadcrumbs::getBreadcrumbs($product->category_id, $product->title);
 
         // Связанные товары
         $related = \R::getAll("SELECT * FROM related_product JOIN product ON product.id = related_product.related_id WHERE related_product.product_id = ?", [$product->id]);
@@ -38,7 +40,7 @@ class ProductController extends AppController{
         // Необходимо получить все модификации товара если такие есть из-за которых будет меняться цена.
 
         $this->setMeta($product->title, $product->description, $product->keywords);
-        $this->set(compact('product', 'related', 'gallery', 'recentlyViewed'));
+        $this->set(compact('product', 'related', 'gallery', 'recentlyViewed', 'breadcrumbs'));
     }
 
 }
