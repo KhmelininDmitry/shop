@@ -23,11 +23,12 @@ class ProductController extends AppController{
         // Просмотренные товары
 
         // Галерея
+        $gallery = \R::findAll('gallery', 'product_id = ?', [$product->id]);
 
         // Необходимо получить все модификации товара если такие есть из-за которых будет меняться цена.
 
         $this->setMeta($product->title, $product->description, $product->keywords);
-        $this->set(compact('product', 'related'));
+        $this->set(compact('product', 'related', 'gallery'));
     }
 
 }
