@@ -161,6 +161,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     </div>
 </div>
 <!--footer-end-->
+
+<?php $curr = \shop\App::$app->getProperty('currency'); ?>
+<script>
+    var path = '<?= PATH;?>',
+        course = <?= $curr['value']; ?>,
+        symboleLeft = '<?= $curr['symbol_left']; ?>',
+        symboleRight = '<?= $curr['symbol_right']; ?>';
+</script>
+
 <script src="js/jquery-1.11.0.min.js"></script>
 <script src="js/simpleCart.min.js"> </script>
 <!--dropdown-->
