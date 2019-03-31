@@ -13,9 +13,9 @@ define("LAYOUT", 'watches');
 //http://shop.loc/index.php
 $app_path = "http://{$_SERVER['HTTP_HOST']}{$_SERVER['PHP_SELF']}";
 //http://shop.loc/
-$app_path = preg_replace("#[^/]+$#", '', $app_path);
+//$app_path = preg_replace("#[^/]+$#", '', $app_path); //Назнаю почему дома на локали не работает
 //$app_path = str_replace("public/", '', $app_path);
-$app_path = str_replace(".loc/", '.loc', $app_path);
+//$app_path = str_replace(".loc/", '.loc', $app_path); //Назнаю почему дома на локали не работает
 
 define("PATH", $app_path);
 define("ADMIN", PATH . '/admin');
