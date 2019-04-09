@@ -12,6 +12,7 @@
   },
   "require": {
     "gabordemooij/redbean": "^5.2",
-    "shop/core": "^1.0.0"
+    "shop/core": "^1.0.0",
+    "vlucas/valitron": "^1.4"
   }
 }
