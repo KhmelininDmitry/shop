@@ -5,7 +5,6 @@ namespace app\controllers;
 
 
 use app\models\User;
-use shop\App;
 
 class UserController extends AppController {
 
@@ -14,8 +13,13 @@ class UserController extends AppController {
             $user = new User();
             $data = $_POST;
             $user->load($data);
-            debug($user);
-            die;
+            if (!$user->validate($data)) {
+                $user->getErrors();
+                redirect();
+            }else{
+                $_SESSION['success'] = 'OK';
+                redirect();
+            }
         }
         $this->setMeta('Реигстрация');
     }
