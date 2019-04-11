@@ -39,7 +39,7 @@
                                 <div class="form-group has-feedback">
                                     <label for="address">Address</label>
                                     <input type="text" name="address" class="form-control" id="address" placeholder="Address"
-                                           value="<?= isset($_SESSION['form_data']['email']) ? $_SESSION['form_data']['email'] : ''; ?>" required>
+                                           value="<?= isset($_SESSION['form_data']['address']) ? $_SESSION['form_data']['address'] : ''; ?>" required>
                                     <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
                                 </div>
                                 <button type="submit" class="btn btn-default">Зарегистрировать</button>
