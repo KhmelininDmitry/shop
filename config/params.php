@@ -1,15 +1,12 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: KhmelininDmitry
- * Date: 22.02.19
- * Time: 18:00
- */
 
 return [
-    'admin_email' => 'admin@mail.com',
+    'admin_email' => 'khmelinindmitry@mail.com',
     'shop_name' => 'Магазин shop.loc',
     'pagination' => 3,
-    'smtp_login' => '',
-    'smtp_password' => '',
+    'smtp_host' => 'smtp.yandex.ru',
+    'smtp_port' => '465',
+    'smtp_protocol' => 'ssl',
+    'smtp_login' => 'testshop343@yandex.ru',
+    'smtp_password' => 'Qwer*1234',
 ];
