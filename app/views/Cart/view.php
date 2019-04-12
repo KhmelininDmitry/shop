@@ -45,7 +45,7 @@
                                         <td><?= $item['qty']; ?></td>
                                         <td><?= $item['price']; ?></td>
                                         <td>
-                                            <a href="cart/delete/?id=<?= $id; ?>">
+                                            <a href="/cart/delete/?id=<?= $id; ?>">
                                                 <span data-id="<?= $id; ?>" class="glyphicon glyphicon-remove text-danger del-item" aria-hidden="true"></span>
                                             </a>
                                         </td>
@@ -64,7 +64,7 @@
                             </table>
                         </div>
                         <div class="col-md-6 account-left">
-                            <form method="post" action="user/checkout" role="form" data-toggle="validator">
+                            <form method="post" action="cart/checkout" role="form" data-toggle="validator">
                                 <?php if(!isset($_SESSION['user'])): ?>
                                     <div class="form-group has-feedback">
                                         <label for="login">Login</label>
