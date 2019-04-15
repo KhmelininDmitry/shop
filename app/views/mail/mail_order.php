@@ -1,4 +1,4 @@
-<<!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -23,7 +23,7 @@
                 <th style="padding: 8px; border: 1px solid #ddd;"><?= $item['title']; ?></th>
                 <th style="padding: 8px; border: 1px solid #ddd;"><?= $item['qty']; ?></th>
                 <th style="padding: 8px; border: 1px solid #ddd;"><?= $item['price']; ?></th>
-                <th style="padding: 8px; border: 1px solid #ddd;"><?= $item['title'] * $item['qty']; ?></th>
+                <th style="padding: 8px; border: 1px solid #ddd;"><?= $item['price'] * $item['qty']; ?></th>
             </tr>
         <?php endforeach; ?>
         <tr style="background: #f9f9f9;">
