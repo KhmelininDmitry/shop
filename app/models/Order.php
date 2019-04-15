@@ -46,13 +46,13 @@ class Order extends AppModel {
         require \APP . '/views/mail/mail_order.php';
         $body = ob_get_clean();
 
-        $message_client = (new Swift_Message("Заказ №-{$order_id}"))
+        $message_client = (new Swift_Message("Вы совершили заказ №-{$order_id} на сайте" . App::$app->getProperty('shop_name')))
             ->setFrom([App::$app->getProperty('smtp_login') => App::$app->getProperty('shop_name')])
             ->setTo($user_email)
             ->setBody($body, 'text/html')
         ;
 
-        $message_admin = (new Swift_Message("Заказ №-{$order_id}"))
+        $message_admin = (new Swift_Message("Сделан заказ №-{$order_id} на сайте" . App::$app->getProperty('shop_name')))
             ->setFrom([App::$app->getProperty('smtp_login') => App::$app->getProperty('shop_name')])
             ->setTo(App::$app->getProperty('admin_email'))
             ->setBody($body, 'text/html')
