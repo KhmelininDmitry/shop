@@ -20,15 +20,16 @@
                     <div class="table-responsive">
                         <table class="table table-bordered table-hover">
                             <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Покупатель</th>
-                                <th>Статус</th>
-                                <th>Сумма</th>
-                                <th>Дата создания</th>
-                                <th>Дата изменения</th>
-                                <th>Действия</th>
-                            </tr>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Покупатель</th>
+                                    <th>Статус</th>
+                                    <th>Сумма</th>
+                                    <th>Дата создания</th>
+                                    <th>Дата изменения</th>
+                                    <th>Действия</th>
+                                </tr>
+                            </thead>
                             <tbody>
                             <?php foreach ($orders as $order): ?>
                                 <?php $calass = $order['status'] ? 'success' : ''; ?>
@@ -46,7 +47,6 @@
                                 </tr>
                             <?php endforeach; ?>
                             </tbody>
-                            </thead>
                         </table>
                     </div>
                     <div class="text-center">
