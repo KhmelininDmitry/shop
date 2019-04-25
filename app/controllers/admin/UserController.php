@@ -10,7 +10,7 @@ class UserController extends AppController {
     public function loginAdminAction() {
         if (!empty($_POST)) {
             $user = new User();
-            if ($user->login(true)) {
+            if (!$user->login(true)) {
                 $_SESSION['error'] = 'Логин/пароль введены неверно';
             }
             if (User::isAdmin()) {
