@@ -6,9 +6,25 @@ namespace app\models;
 
 use shop\App;
 
-class Category extends AppModel {
+class Category extends AppModel
+{
 
-    public function getIds($id) {
+    public $attributes = [
+        'title' => '',
+        'parent_id' => '',
+        'keywords' => '',
+        'description' => '',
+        'alias' => '',
+    ];
+
+    public $rules = [
+        'required' => [
+            ['title'],
+        ]
+    ];
+
+    public function getIds($id)
+    {
         $cats = App::$app->getProperty('cats');
         $ids = null;
         foreach ($cats as $k => $v) {
