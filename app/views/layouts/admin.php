@@ -310,7 +310,7 @@
             <!-- sidebar menu: : style can be found in sidebar.less -->
             <ul class="sidebar-menu" data-widget="tree">
                 <li class="header">Меню</li>
-                <li class="active">
+                <li class="">
                     <a href="<?=ADMIN;?>/">
                         <i class="fa fa-home"></i>
                         <span>Home</span>
@@ -328,8 +328,8 @@
                         <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="<?=ADMIN;?>/product">Список категорий</a></li>
-                        <li><a href="<?=ADMIN;?>/product/add">Добавить категорию</a></li>
+                        <li><a href="<?=ADMIN;?>/category">Список категорий</a></li>
+                        <li><a href="<?=ADMIN;?>/category/add">Добавить категорию</a></li>
                     </ul>
                 </li>
                 <li class="treeview">
