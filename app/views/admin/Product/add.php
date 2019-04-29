@@ -63,24 +63,24 @@
                         <div class="form-group has-feedback">
                             <label for="old_price">Старая цена</label>
                             <input type="text" name="old_price" class="form-control" id="old_price" placeholder="Старая цена" pattern="^[0-9.]{1,}$"
-                                   value="<?php isset($_SESSION['form_data']['old_price']) ? h($_SESSION['form_data']['old_price']) : null; ?>"
+                                   value="<?php isset($_SESSION['form_data']['old_price']) ? h($_SESSION['form_data']['old_price']) : '0'; ?>"
                                    data-error="Допускаются цифры и десятичная точка">
                             <div class="help-block with-errors"></div>
                         </div>
 
                         <div class="form-group has-feedback">
                             <label for="content">Контент</label>
-                            <textarea name="content" id="editor1" cols="80" rows="10"><?php isset($_SESSION['form_data']['old_price']) ? $_SESSION['form_data']['old_price'] : null; ?></textarea>
+                            <textarea name="content" id="editor1" cols="80" rows="10"><?php isset($_SESSION['form_data']['content']) ? $_SESSION['form_data']['content'] : null; ?></textarea>
                         </div>
 
                         <div class="form-group">
-                            <label for="old_price">
+                            <label>
                                 <input type="checkbox" name="status" checked> Статус
                             </label>
                         </div>
 
                         <div class="form-group">
-                            <label for="old_price">
+                            <label>
                                 <input type="checkbox" name="hit"> Хит
                             </label>
                         </div>
