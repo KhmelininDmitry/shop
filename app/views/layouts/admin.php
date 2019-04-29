@@ -324,7 +324,7 @@
                 </li>
                 <li class="treeview">
                     <a href="<?=ADMIN;?>">
-                        <i class="fa fa-dashboard"></i><span>Категории</span>
+                        <i class="fa fa-list"></i><span>Категории</span>
                         <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
                     </a>
                     <ul class="treeview-menu">
@@ -354,8 +354,8 @@
                         <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="<?=ADMIN;?>">Список пользователей</a></li>
-                        <li><a href="<?=ADMIN;?>">Добавить пользователя</a></li>
+                        <li><a href="<?=ADMIN;?>/user">Список пользователей</a></li>
+                        <li><a href="<?=ADMIN;?>/user/add">Добавить пользователя</a></li>
                     </ul>
                 </li>
             </ul>
