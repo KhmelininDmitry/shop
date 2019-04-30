@@ -15,14 +15,15 @@
 /* IMPORTANT!!! Do not comment or remove uncommented settings in this file
    even if you are using session configuration.
    See http://kcfinder.sunhater.com/install for setting descriptions */
+session_start();
 
 $_CONFIG = array(
 
 
 // GENERAL SETTINGS
 
-    'disabled' => true,
-    'uploadURL' => "upload",
+    'disabled' => !(isset($_SESSION['user']) && $_SESSION['user']['role'] == 'admin'),
+    'uploadURL' => "/public/upload",
     'uploadDir' => "",
     'theme' => "default",
 
