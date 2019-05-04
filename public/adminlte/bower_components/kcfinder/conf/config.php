@@ -23,7 +23,7 @@ $_CONFIG = array(
 // GENERAL SETTINGS
 
     'disabled' => !(isset($_SESSION['user']) && $_SESSION['user']['role'] == 'admin'),
-    'uploadURL' => "/public/upload",
+    'uploadURL' => "/upload",
     'uploadDir' => "",
     'theme' => "default",
 

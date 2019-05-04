@@ -15,7 +15,7 @@
 namespace kcfinder;
 
 class browser extends uploader {
-    protected $action;
+    protected $action = 'browser';
     protected $thumbsDir;
     protected $thumbsTypeDir;
 
