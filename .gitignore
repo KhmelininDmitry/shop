@@ -1,3 +1,4 @@
-.idea
+.idea/*
 /tmp/errors.log
 /tmp/cache/
+public/upload/*
