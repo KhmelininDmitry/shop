@@ -59,11 +59,11 @@
                                    data-error="Допускаются цифры и десятичная точка">
                             <div class="help-block with-errors"></div>
                         </div>
-
+                        Тут баг, значение старой цены должно быть ноль.
                         <div class="form-group has-feedback">
                             <label for="old_price">Старая цена</label>
                             <input type="text" name="old_price" class="form-control" id="old_price" placeholder="Старая цена" pattern="^[0-9.]{1,}$"
-                                   value="<?php isset($_SESSION['form_data']['old_price']) ? h($_SESSION['form_data']['old_price']) : '0'; ?>"
+                                   value="<?php isset($_SESSION['form_data']['old_price']) ? h($_SESSION['form_data']['old_price']) : null; ?>"
                                    data-error="Допускаются цифры и десятичная точка">
                             <div class="help-block with-errors"></div>
                         </div>
