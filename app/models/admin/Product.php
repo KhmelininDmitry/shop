@@ -32,6 +32,42 @@ class Product extends AppModel
         ],
     ];
 
+    public function editRelatedProduct($id, $data)
+    {
+        $related_product = \R::getCol('SELECT related_id FROM related_product WHERE product_id = ?', [$id]);
+        // Если менеджер убрал связанные товары - удаляем их
+        if (empty($data['related']) && !empty($related_product)) {
+            \R::exec("DELETE FROM related_product WHERE product_id = ?", [$id]);
+            return;
+        }
+        // Если связанные товары добаляются
+        if (empty($related_product) && !empty($data['related'])) {
+            $sql_part = '';
+            foreach ($data['related'] as $v) {
+                $v = (int)$v;
+                $sql_part .= "($id, $v),";
+            }
+            $sql_part = rtrim($sql_part, ',');
+            \R::exec("INSERT INTO related_product (product_id, related_id) VALUES $sql_part");
+            return;
+        }
+        // Если изменились связанные товары - удалим старые и запишем новые
+        if (!empty($data['related'])) {
+            $result = array_diff($related_product, $data['related']);
+            if (!empty($result) || count($related_product) != count($data['related'])) {
+                \R::exec("DELETE FROM related_product WHERE product_id = ?", [$id]);
+                $sql_part = '';
+                foreach ($data['related'] as $v) {
+                    $v = (int)$v;
+                    $sql_part .= "($id, $v),";
+                }
+                $sql_part = rtrim($sql_part, ',');
+                \R::exec("INSERT INTO related_product (product_id, related_id) VALUES $sql_part");
+            }
+            return;
+        }
+    }
+
     public function editFilter($id, $data)
     {
         $filter = \R::getCol('SELECT attr_id FROM attribute_product WHERE product_id = ?', [$id]);
@@ -42,25 +78,25 @@ class Product extends AppModel
         }
         // Если фильтры добаляются
         if (empty($filter) && !empty($data['attrs'])) {
-            $sql_pard = '';
+            $sql_part = '';
             foreach ($data['attrs'] as $v) {
-                $sql_pard .= "($v, $id),";
+                $sql_part .= "($v, $id),";
             }
-            $sql_pard = rtrim($sql_pard, ',');
-            \R::exec("INSERT INTO attribute_product (attr_id, product_id) VALUES $sql_pard");
+            $sql_part = rtrim($sql_part, ',');
+            \R::exec("INSERT INTO attribute_product (attr_id, product_id) VALUES $sql_part");
             return;
         }
         // Если изменились фильтры - удалим старые и запишем новые (Очень просто удалить все старые и записать все пришедшие новые)
         if (!empty($data['attrs'])) {
             $result = array_diff($filter, $data['attrs']);
-            if ($result) {
+            if (!$result) {
                 \R::exec("DELETE FROM attribute_product WHERE product_id = ?", [$id]);
-                $sql_pard = '';
+                $sql_part = '';
                 foreach ($data['attrs'] as $v) {
-                    $sql_pard .= "($v, $id),";
+                    $sql_part .= "($v, $id),";
                 }
-                $sql_pard = rtrim($sql_pard, ',');
-                \R::exec("INSERT INTO attribute_product (attr_id, product_id) VALUES $sql_pard");
+                $sql_part = rtrim($sql_part, ',');
+                \R::exec("INSERT INTO attribute_product (attr_id, product_id) VALUES $sql_part");
             }
             return;
         }

@@ -46,6 +46,7 @@ class ProductController extends AppController
                 $p->alias = $alias;
                 \R::store($p);
                 $product->editFilter($id, $data);
+                $product->editRelatedProduct($id, $data);
                 $_SESSION['success'] = 'Товар добавлен';
             }
             redirect();
