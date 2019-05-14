@@ -9,4 +9,8 @@ return [
     'smtp_protocol' => 'ssl',
     'smtp_login' => 'testshop343@yandex.ru',
     'smtp_password' => 'Qwer*1234',
+    'img_width' => 125,
+    'img_height' => 200,
+    'gallery_width' => 700,
+    'gallery_height' => 1000,
 ];

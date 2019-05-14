@@ -40,3 +40,7 @@
     border-color: red;
     color: #fff;
 }
+
+.overlay {
+    display: none;
+}
