@@ -6,6 +6,7 @@ namespace app\controllers\admin;
 
 use app\models\admin\Product;
 use app\models\AppModel;
+use shop\App;
 use shop\libs\Pagination;
 
 class ProductController extends AppController
@@ -22,6 +23,23 @@ class ProductController extends AppController
                         FROM product JOIN category ON category.id = product.category_id ORDER BY product.title LIMIT $start, $perpage");
         $this->setMeta('Список товаров');
         $this->set(compact('products', 'pagination', 'count'));
+
+    }
+
+    public function addImageAction()
+    {
+        if(isset($_GET['upload'])) {
+            if ($_POST['name'] == 'single') {
+                $wmax = App::$app->getProperty('img_width');
+                $hmax = App::$app->getProperty('img_height');
+            } else {
+                $wmax = App::$app->getProperty('gallery_width');
+                $hmax = App::$app->getProperty('gallery_height');
+            }
+            $name = $_POST['name'];
+            $product = new Product();
+            $product->uploadImg($name, $wmax, $hmax);
+        }
 
     }
 
