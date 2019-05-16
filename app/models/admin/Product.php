@@ -121,7 +121,8 @@ class Product extends AppModel
         }
         $new_name = md5(time()) . ".$ext";
         $uploadfile = $uploaddir.$new_name;
-        if (@move_uploaded_file($_FILES[$name]['tmp_name'], $uploadfile)) {
+
+        if (move_uploaded_file($_FILES[$name]['tmp_name'], $uploadfile)) {
             if ($name == 'single') {
                 $_SESSION['single'] = $new_name;
             } else {
@@ -131,6 +132,7 @@ class Product extends AppModel
             $res = array("file" => $new_name);
             exit(json_encode($res));
         }
+        exit(json_encode(['error' => 'Возможно нет прав на папку, ошибка!']));
     }
 
     /**
