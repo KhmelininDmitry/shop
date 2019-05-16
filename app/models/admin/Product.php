@@ -102,6 +102,27 @@ class Product extends AppModel
         }
     }
 
+    public function getImg()
+    {
+        if (!empty($_SESSION['single'])) {
+            $this->attributes['img'] = $_SESSION['single'];
+            unset($_SESSION['single']);
+        }
+    }
+
+    public function saveGallery($id)
+    {
+        if (!empty($_SESSION['multi'])) {
+            $sql_part = '';
+            foreach ($_SESSION['multi'] as $v) {
+                $sql_part .= "('$v', $id),";
+            }
+            $sql_part = rtrim($sql_part, ',');
+            \R::exec("INSERT INTO gallery (img, product_id) VALUES $sql_part");
+            unset($_SESSION['multi']);
+        }
+    }
+
     public function uploadImg($name, $wmax, $hmax)
     {
         $uploaddir = WWW . '/images/';

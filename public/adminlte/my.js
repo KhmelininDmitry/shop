@@ -58,7 +58,6 @@ new AjaxUpload(buttonSingle, {
     },
     onComplete: function(file, response){
         setTimeout(function() {
-            console.log(response);
             buttonSingle.closest('.file-upload').find('.overlay').css({'display':'none'});
             response = JSON.parse(response);
             $('.' + buttonSingle.data('name')).html('<img src="/images/' + response.file + '" style="max-height: 150px;">');

@@ -51,6 +51,7 @@ class ProductController extends AppController
             $product->load($data);
             $product->attributes['status'] = $product->attributes['status'] ? '1' : '0';
             $product->attributes['hit']    = $product->attributes['hit'] ? '1' : '0';
+            $product->getImg();
 
             if ( ! $product->validate($data)) {
                 $product->getErrors();
@@ -59,6 +60,7 @@ class ProductController extends AppController
             }
 
             if ($id = $product->save('product')) {
+                $product->saveGallery($id);
                 $alias    = AppModel::createAlias('product', 'alias', $data['title'], $id);
                 $p        = \R::load('product', $id);
                 $p->alias = $alias;
