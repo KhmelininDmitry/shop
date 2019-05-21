@@ -89,7 +89,7 @@ class Product extends AppModel
         // Если изменились фильтры - удалим старые и запишем новые (Очень просто удалить все старые и записать все пришедшие новые)
         if (!empty($data['attrs'])) {
             $result = array_diff($filter, $data['attrs']);
-            if (!$result) {
+            if (!$result || count($filter) != count($data['attrs'])) {
                 \R::exec("DELETE FROM attribute_product WHERE product_id = ?", [$id]);
                 $sql_part = '';
                 foreach ($data['attrs'] as $v) {
